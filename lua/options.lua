@@ -1,4 +1,3 @@
-
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
@@ -6,9 +5,9 @@ local g = vim.g
 o.laststatus = 3
 o.showmode = false
 
-o.clipboard = 'unnamedplus'
+o.clipboard = "unnamedplus"
 o.cursorline = true
-o.cursorlineopt = 'number'
+o.cursorlineopt = "number"
 
 -- Indenting
 o.expandtab = true
@@ -17,10 +16,10 @@ o.smartindent = true
 o.tabstop = 2
 o.softtabstop = 2
 
-opt.fillchars = { eob = ' ' }
+opt.fillchars = { eob = " " }
 o.ignorecase = true
 o.smartcase = true
-o.mouse = 'a'
+o.mouse = "a"
 
 -- Numbers
 o.number = true
@@ -28,9 +27,9 @@ o.numberwidth = 2
 o.ruler = false
 
 -- disable nvim intro
-opt.shortmess:append 'sI'
+opt.shortmess:append("sI")
 
-o.signcolumn = 'yes'
+o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
@@ -41,8 +40,6 @@ o.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append '<>[]hl'
+opt.whichwrap:append("<>[]hl")
 
-
-g.mapleader = ' '
-
+g.mapleader = " "

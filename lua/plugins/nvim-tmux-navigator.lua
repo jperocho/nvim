@@ -1,9 +1,11 @@
 return {
-  'christoomey/vim-tmux-navigator',
+  "christoomey/vim-tmux-navigator",
   config = function()
-    vim.keymap.set('n', 'C-h', ':TmuxNavigateLeft<CR>')
-    vim.keymap.set('n', 'C-l', ':TmuxNavigateRight<CR>')
-    vim.keymap.set('n', 'C-k', ':TmuxNavigateUp<CR>')
-    vim.keymap.set('n', 'C-j', ':TmuxNavigateDown<CR>')
+    local map = vim.keymap.set
+
+    map("n", "C-h", ":TmuxNavigateLeft<CR>")
+    map("n", "C-l", ":TmuxNavigateRight<CR>")
+    map("n", "C-k", ":TmuxNavigateUp<CR>")
+    map("n", "C-j", ":TmuxNavigateDown<CR>")
   end,
 }

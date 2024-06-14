@@ -1,27 +1,45 @@
 return {
   {
-    'williamboman/mason.nvim',
+    "williamboman/mason.nvim",
     config = function()
-      local mason = require('mason')
+      local mason = require("mason")
       mason.setup()
     end,
   },
   {
-    'williamboman/mason-lspconfig.nvim',
+    "williamboman/mason-lspconfig.nvim",
     config = function()
-      local mason_lspconfig = require('mason-lspconfig')
+      local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup({
-        ensure_installed = { 'lua_ls' }
+        ensure_installed = { "lua_ls", "tsserver" },
       })
     end,
   },
   {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require('lspconfig')
+      local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
+      lspconfig.tsserver.setup({})
 
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+      local map = vim.keymap.set
+      map("n", "K", vim.lsp.buf.hover, {})
+      map("n", "gd", vim.lsp.buf.definition, {})
+      map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
-  }
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.stylua,
+        },
+      })
+
+      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    end,
+  },
 }
