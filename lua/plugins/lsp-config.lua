@@ -20,7 +20,13 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
-      lspconfig.tsserver.setup({})
+      lspconfig.tsserver.setup({
+        init_options = {
+          preferences = {
+            disableSuggestions = true,
+          },
+        },
+      })
 
       local map = vim.keymap.set
       map("n", "K", vim.lsp.buf.hover, {})
@@ -30,12 +36,16 @@ return {
   },
   {
     "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
     config = function()
       local null_ls = require("null-ls")
 
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.stylua,
+          require("none-ls.diagnostics.eslint_d"),
         },
       })
 
