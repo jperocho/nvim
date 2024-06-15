@@ -3,7 +3,18 @@ vim.o.showmode = false
 
 vim.o.clipboard = "unnamedplus"
 vim.o.cursorline = true
-vim.o.cursorlinevim.opt = "number"
+vim.o.cursorlineopt = "number"
+
+-- Shows tab and space characters
+vim.o.list = true
+local space = "·"
+vim.opt.listchars:append {
+	tab = "│─",
+	multispace = space,
+	lead = space,
+	trail = space,
+	nbsp = space
+}
 
 -- Default Indenting
 vim.o.expandtab = true
