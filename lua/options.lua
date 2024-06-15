@@ -1,45 +1,41 @@
-local opt = vim.opt
-local o = vim.o
-local g = vim.g
+vim.o.laststatus = 3
+vim.o.showmode = false
 
-o.laststatus = 3
-o.showmode = false
+vim.o.clipboard = "unnamedplus"
+vim.o.cursorline = true
+vim.o.cursorlinevim.opt = "number"
 
-o.clipboard = "unnamedplus"
-o.cursorline = true
-o.cursorlineopt = "number"
+-- Default Indenting
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.smartindent = true
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
 
--- Indenting
-o.expandtab = true
-o.shiftwidth = 2
-o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
-
-opt.fillchars = { eob = " " }
-o.ignorecase = true
-o.smartcase = true
-o.mouse = "a"
+vim.opt.fillchars = { eob = " " }
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.mouse = "a"
 
 -- Numbers
-o.number = true
-o.numberwidth = 2
-o.ruler = false
+vim.o.number = true
+vim.o.numberwidth = 2
+vim.o.ruler = false
 
 -- disable nvim intro
-opt.shortmess:append("sI")
+vim.opt.shortmess:append("sI")
 
-o.signcolumn = "yes"
-o.splitbelow = true
-o.splitright = true
-o.timeoutlen = 400
-o.undofile = true
+vim.o.signcolumn = "yes"
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.timeoutlen = 400
+vim.o.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
-o.updatetime = 250
+vim.o.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append("<>[]hl")
+vim.opt.whichwrap:append("<>[]hl")
 
-g.mapleader = " "
+vim.g.mapleader = " "
