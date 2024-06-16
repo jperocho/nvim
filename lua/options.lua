@@ -8,13 +8,13 @@ vim.o.cursorlineopt = "number"
 -- Shows tab and space characters
 vim.o.list = true
 local space = "·"
-vim.opt.listchars:append {
-	tab = "│─",
-	multispace = space,
-	lead = space,
-	trail = space,
-	nbsp = space
-}
+vim.opt.listchars:append({
+  tab = "│─",
+  multispace = space,
+  lead = space,
+  trail = space,
+  nbsp = space,
+})
 
 -- Default Indenting
 vim.o.expandtab = true

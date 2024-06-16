@@ -19,7 +19,7 @@ return {
         theme_conf = { border = true },
         previewer = true,
       },
-      vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, { noremap = true })
+      vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, { noremap = true }),
     })
   end,
 }
