@@ -1,24 +1,24 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  config = function()
-    local lualine = require("lualine")
-    local lazy_status = require("lazy.status")
+	"nvim-lualine/lualine.nvim",
+	config = function()
+		local lualine = require("lualine")
+		local lazy_status = require("lazy.status")
 
-    lualine.setup({
-      options = {
-        theme = "codedark",
-      },
-      sections = {
-        lualine_x = {
-          {
-            lazy_status.updates,
-	    cond = lazy_status.has_updates,
-	  },
-	  { "encoding" },
-	  { "fileformat" },
-	  { "filetype" },
-	},
-      },
-    })
-  end,
+		lualine.setup({
+			options = {
+				theme = "dracula",
+			},
+			sections = {
+				lualine_x = {
+					{
+						lazy_status.updates,
+						cond = lazy_status.has_updates,
+					},
+					{ "encoding" },
+					{ "fileformat" },
+					{ "filetype" },
+				},
+			},
+		})
+	end,
 }

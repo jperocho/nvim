@@ -32,12 +32,20 @@ vim.o.softtabstop = 2
 o.list = true
 local space = "·"
 opt.listchars:append({
-  tab = "│ ",
-  multispace = space,
-  lead = space,
-  trail = space,
-  nbsp = space,
+	tab = "│ ",
+	multispace = space,
+	lead = space,
+	trail = space,
+	nbsp = space,
 })
+--vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--cmd([[
+--  highlight Normal guibg=none
+--  highlight NonText guibg=none
+--  highlight Normal ctermbg=none
+--  highlight NonText ctermbg=none
+--]])
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
