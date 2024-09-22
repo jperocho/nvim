@@ -22,22 +22,23 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 -- Default Indenting
-vim.o.expandtab = true
-vim.o.shiftwidth = 2
-vim.o.smartindent = true
-vim.o.tabstop = 2
-vim.o.softtabstop = 2
+o.expandtab = true
+o.shiftwidth = 2
+o.smartindent = true
+o.tabstop = 2
+o.softtabstop = 2
 
 -- Shows tab and space characters
-o.list = true
-local space = "·"
-opt.listchars:append({
-	tab = "│ ",
-	multispace = space,
-	lead = space,
-	trail = space,
-	nbsp = space,
-})
+--o.list = true
+--local space = "·"
+--opt.listchars:append({
+--	tab = "│ ",
+--	multispace = space,
+--	lead = space,
+--	trail = space,
+--	nbsp = space,
+--})
+
 --vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --cmd([[
@@ -49,4 +50,4 @@ opt.listchars:append({
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-vim.opt.whichwrap:append("<>[]hl")
+opt.whichwrap:append("<>[]hl")
